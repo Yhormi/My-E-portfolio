@@ -1,0 +1,300 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #d8c590, #bfa06a, #7a5c2e);
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+    background: #3e2f1c;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background:#bfa06a;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Sections */
+section {
+    padding: 100px 5% 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: #3e2f1c;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    padding-top: 150px;
+}
+
+#home p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* About Section */
+#about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+#pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+#pic:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+#about p {
+    color: white;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Education Section */
+#edu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.logs {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logs:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.ko {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border: 4px solid rgba(255,255,255,0.3);
+}
+
+/* Skills Section */
+#skill .skil {
+    display: grid;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#skill .skil li {
+    list-style: none;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#skill h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.bar {
+    display: block;
+    height: 12px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.prog, .vid, .tra {
+    height: 100%;
+    border-radius: 10px;
+    animation: load 2s ease-out;
+}
+
+.prog { background: #3e2f1c; width: 75%; }
+.vid { background: #3e2f1c; width: 85%; }
+.tra { background:#3e2f1c; width: 90%; }
+
+@keyframes load {
+    from { width: 0; }
+}
+
+/* Hobbies Section */
+#hob {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.in {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border: 4px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.in:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+/* Contact Section */
+#con {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.so {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 20px;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.so:hover {
+    transform: translateY(-10px) scale(1.1);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    section {
+        padding: 120px 3% 60px;
+    }
+    
+    section h1 {
+        font-size: 2.2rem;
+    }
+    
+    #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    #pic {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section h1 {
+        font-size: 1.8rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    .ko, .in {
+        height: 200px;
+    }
+}
